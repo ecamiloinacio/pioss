@@ -1,7 +1,7 @@
 #include "pioss.h"
 
 #include "cli.h"
-#include "csvexporter.h"
+#include "exporter.h"
 #include "dts.h"
 #include "logger.h"
 #include "mds.h"
@@ -18,7 +18,7 @@ pioss_init (const param param)
 
   uint32_t num_files = param.is_shared ? 1 : param.num_cli;
   mds_init (param.file_dist, param.stripe_width, num_files, param.num_dts,
-	    param.rng_seed);
+            param.rng_seed);
 }
 
 static void
@@ -64,7 +64,7 @@ pioss_exec (const param param)
     }
 
   if (strlen (param.out_path) > 0)
-    export_csv (results, param.out_path);
+    export_results (results, param);
 
   free (results);
 

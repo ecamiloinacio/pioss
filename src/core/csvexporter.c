@@ -7,9 +7,10 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
+#include <sys/stat.h>
 #include <unistd.h>
 
-static FILE*
+static FILE *
 create_file (const char *out_path)
 {
   FILE *file = NULL;
@@ -20,11 +21,11 @@ create_file (const char *out_path)
     {
       file = fopen (out_path, "w+");
       if (!file)
-	{
-	  int errnum = errno;
-	  logf (ERROR, "Failed to create output file: %s (%d: %s)", out_path,
-		errnum, strerror (errnum));
-	}
+        {
+          int errnum = errno;
+          logf (ERROR, "Failed to create output file: %s (%d: %s)", out_path,
+                errnum, strerror (errnum));
+        }
     }
 
   return file;
@@ -40,7 +41,7 @@ export_csv (const dts_results *results, const char *out_path)
       fputs ("DTS,Bytes\n", file);
       uint32_t num_dts = results->num_dts;
       for (int i = 0; i < num_dts; i++)
-	fprintf (file, "%u,%lu\n", i, results->bytes_stored[i]);
+        fprintf (file, "%u,%lu\n", i, results->bytes_stored[i]);
 
       fflush (file);
       fclose (file);
