@@ -4,6 +4,8 @@ A Parallel I/O and Storage System (PIOSS) simulation model for the analysis of s
 PIOSS simulates a scenario with multiple processes generating write requests to a shared or multiple independent files into a Parallel File System (PFS).
 At the end of the simulation, the load distribution across PFS data servers are presented.
 
+For referencing: INACIO, EDUARDO C.; DANTAS, MARIO A. R. . PIOSS: A Simulation Model for the Analysis of Parallel I/O Performance Variability on Large-scale Applications. In: Simpósio em Sistemas Computacionais de Alto Desempenho, 2022, Brasil. Anais do XXIII Simpósio em Sistemas Computacionais de Alto Desempenho (WSCAD 2022). Porto Alegre: Sociedade Brasileira de Computação, 2022. v. 1. p. 300-311. (DOI: http://dx.doi.org/10.5753/wscad.2022.226350)
+
 ## Requirements
 
 1. PIOSS is written in C, and, thus, requires a C compiler (C99 or higher);
