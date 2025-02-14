@@ -24,7 +24,7 @@ char *
 build_filepath (const param param)
 {
   char *filepath;
-  char *format = "%s/n%d_b%d_s%d_m%d_w%d_z%d_f%s-%f.csv";
+  char *format = "%s/n%u_b%lu_s%d_m%u_w%u_z%lu_f%s-%f.csv";
   double timestamp = usectime ();
   int len = snprintf (filepath, 0, format, param.out_path, param.num_cli,
                       param.data_size, param.is_shared, param.num_dts,
