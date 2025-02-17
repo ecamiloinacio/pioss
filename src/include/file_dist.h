@@ -10,10 +10,8 @@
 typedef struct file_dist
 {
   char *fd_name;
-  void
-  (*init) (uint32_t rnd_seed);
-  uint32_t*
-  (*select_dts) (uint32_t num_dts, uint32_t stripe_width);
+  void (*init)(uint32_t rnd_seed);
+  uint32_t *(*select_dts)(uint32_t num_dts, uint32_t stripe_width, uint32_t num_files, uint32_t fid);
 } file_dist;
 
 extern file_dist fd_random;

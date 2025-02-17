@@ -52,7 +52,7 @@ mds_open (uint32_t fid)
 {
   if (!state.file_table[fid])
     state.file_table[fid] = state.file_dist->select_dts (state.num_dts,
-							 state.stripe_width);
+							 state.stripe_width, state.num_files, fid);
 
   return state.file_table[fid];
 }
